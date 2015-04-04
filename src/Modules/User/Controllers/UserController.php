@@ -8,14 +8,56 @@ use Singo\Contracts\Controller\ControllerAbstract;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Swagger\Annotations as SWG;
 
 /**
+ * @SWG\Resource(
+ *      apiVersion="0.0.1",
+ *      swaggerVersion="1.1",
+ *      resourcePath="/user",
+ *      basePath="http://singo.dev"
+ * )
  * Class UserController
  * @package App\Modules\User\Controllers
  */
 class UserController extends ControllerAbstract
 {
     /**
+     * @SWG\Api(
+     *      path="/login",
+     *      description="User login API",
+     *      @SWG\Operation(
+     *          method="POST",
+     *          summary="User login API",
+     *          notes="Return JSON",
+     *          type="User",
+     *          nickname="login",
+     *          @SWG\Parameter(
+     *              name="username",
+     *              description="Username",
+     *              paramType="path",
+     *              required=true,
+     *              allowMultiple=false,
+     *              type="string"
+     *          ),
+     *          @SWG\Parameter(
+     *              name="password",
+     *              description="Password",
+     *              paramType="path",
+     *              required=true,
+     *              allowMultiple=false,
+     *              type="string"
+     *          ),
+     *          @SWG\ResponseMessage(
+     *              code=200,
+     *              message="Succes"
+     *          ),
+     *          @SWG\ResponseMessage(
+     *              code=400,
+     *              message="Invalid username or password"
+     *          )
+     *      )
+     * )
      * @param Request $request
      * @return JsonResponse
      */
