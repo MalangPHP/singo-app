@@ -15,6 +15,7 @@ use Swagger\Annotations as SWG;
  *      apiVersion="0.0.1",
  *      swaggerVersion="1.1",
  *      resourcePath="/user",
+ *      basePath="http://singo.dev"
  * )
  * Class UserController
  * @package App\Modules\User\Controllers
