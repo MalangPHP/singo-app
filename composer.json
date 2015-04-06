@@ -3,7 +3,8 @@
     "description": "Singo Base Application",
     "require": {
         "silex/silex": "~2.0@dev",
-        "malangphp/singo": "~1.1.0"
+        "malangphp/singo": "~1.1.0",
+        "zircote/swagger-php": "*"
         },
     "license": "MIT",
     "authors": [
@@ -12,6 +13,9 @@
             "email": "pras@openmailbox.org"
         }
     ],
+    "scripts": {
+        "post-package-install": "php -r \"copy('vendor/zircote/swagger-php/swagger.phar', '../singo-app/swagger.phar');\""
+    },
     "autoload" : {
         "psr-4" : {
             "App\\" : "src/"
