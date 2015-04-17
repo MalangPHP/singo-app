@@ -14,8 +14,8 @@ use Swagger\Annotations as SWG;
  * @SWG\Resource(
  *      apiVersion="0.0.1",
  *      swaggerVersion="1.1",
- *      resourcePath="/user",
- *      basePath="http://singo.dev"
+ *      resourcePath="/",
+ *      basePath="http://singo-app.dev"
  * )
  * Class UserController
  * @package App\Modules\User\Controllers
@@ -35,7 +35,7 @@ class UserController extends ControllerAbstract
      *          @SWG\Parameter(
      *              name="username",
      *              description="Username",
-     *              paramType="path",
+     *              paramType="query",
      *              required=true,
      *              allowMultiple=false,
      *              type="string"
@@ -43,7 +43,7 @@ class UserController extends ControllerAbstract
      *          @SWG\Parameter(
      *              name="password",
      *              description="Password",
-     *              paramType="path",
+     *              paramType="query",
      *              required=true,
      *              allowMultiple=false,
      *              type="string"

@@ -3,7 +3,7 @@
     "description": "Singo Base Application",
     "require": {
         "silex/silex": "~2.0@dev",
-        "malangphp/singo": "~1.1.0",
+        "malangphp/singo": "~1.1.1",
         "zircote/swagger-php": "*"
         },
     "license": "MIT",
