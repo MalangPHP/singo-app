@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Modules\User;
+
+use App\Modules\User\EventSourcing\Listeners\LogLogin;
+use App\Modules\User\Handlers\UserHandler;
+use App\Modules\User\Commands\LoginCommand;
+use App\Modules\User\Providers\UserServiceProvider;
+use Pimple\Container;
+use Silex\Application;
+use Singo\Application as Singo;
+use Singo\Contracts\Module\ModuleInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
+/**
+ * Class Module
+ * @package App\Modules\User
+ */
+class Module implements ModuleInterface
+{
+
+    /**
+     * {@inheritdoc}
+     */
+    public function boot(Application $app)
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function register(Container $container)
+    {
+        /**
+         * register user service provider
+         */
+        $container->register(new UserServiceProvider());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function subscribe(Container $container, EventDispatcherInterface $dispatcher)
+    {
+        if (! $container instanceof Singo) {
+            throw new \InvalidArgumentException("Container must be instance of " . Singo::class);
+        }
+
+        /**
+         * register login log subscriber
+         */
+        $container->registerSubscriber(LogLogin::class, function () use ($container) {
+            return new LogLogin($container["monolog"]);
+        });
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function command(Singo $application)
+    {
+        /**
+         * register login command and handler
+         */
+        $application->registerCommands(
+            [
+                LoginCommand::class
+            ],
+            function () use ($application) {
+                return new UserHandler($application["security.jwt.encoder"], $application["dispatcher"]);
+            }
+        );
+    }
+}

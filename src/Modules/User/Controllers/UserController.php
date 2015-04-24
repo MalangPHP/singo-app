@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Modules\User\Controllers;
 
 use App\Modules\User\Commands\LoginCommand;
@@ -9,14 +8,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Swagger\Annotations as SWG;
+use DDesrosiers\SilexAnnotations\Annotations as SLX;
 
 /**
  * @SWG\Resource(
  *      apiVersion="0.0.1",
  *      swaggerVersion="1.1",
- *      resourcePath="/",
+ *      resourcePath="/user",
  *      basePath="http://singo-app.dev"
  * )
+ * @SLX\Controller(prefix="/")
  * Class UserController
  * @package App\Modules\User\Controllers
  */
@@ -24,7 +25,7 @@ class UserController extends ControllerAbstract
 {
     /**
      * @SWG\Api(
-     *      path="/login",
+     *      path="/user/login",
      *      description="User login API",
      *      @SWG\Operation(
      *          method="POST",
@@ -57,6 +58,9 @@ class UserController extends ControllerAbstract
      *              message="Invalid username or password"
      *          )
      *      )
+     * )
+     * @SLX\Route(
+     *      @SLX\Request(method="POST", uri="login")
      * )
      * @param Request $request
      * @return JsonResponse
@@ -100,6 +104,28 @@ class UserController extends ControllerAbstract
     }
 
     /**
+     * @SWG\Api(
+     *      path="/user/secure",
+     *      description="User Secure Area",
+     *      @SWG\Operation(
+     *          method="GET",
+     *          summary="User Secure Area",
+     *          notes="Return secure area",
+     *          type="User",
+     *          nickname="secure",
+     *          @SWG\ResponseMessage(
+     *              code=200,
+     *              message="success"
+     *          ),
+     *          @SWG\ResponseMessage(
+     *              code=401,
+     *              message="Unauthorized"
+     *          )
+     *      )
+     * )
+     * @SLX\Route(
+     *      @SLX\Request(method="GET", uri="secure")
+     * )
      * @param Request $request
      * @return JsonResponse
      */
@@ -112,4 +138,3 @@ class UserController extends ControllerAbstract
         );
     }
 }
-
