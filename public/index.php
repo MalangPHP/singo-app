@@ -37,7 +37,7 @@ if (php_sapi_name() === 'cli-server') {
 /**
  * bootstrap our apps
  */
-$app->init();
+$app->init($app);
 
 /**
  * run our apps

@@ -57,5 +57,4 @@ modules:
     -
       User:
         controllers:
-          /user:
-            - UserController
+          - UserController

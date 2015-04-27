@@ -32,7 +32,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
             ]
         );
 
-        $this->app->init();
+        $this->app->init($this->app);
     }
 
     public function testLogin()

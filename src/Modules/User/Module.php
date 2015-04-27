@@ -7,8 +7,11 @@ use App\Modules\User\Handlers\UserHandler;
 use App\Modules\User\Commands\LoginCommand;
 use App\Modules\User\Providers\UserServiceProvider;
 use Pimple\Container;
+use Pimple\ServiceProviderInterface;
+use Silex\Api\EventListenerProviderInterface;
 use Silex\Application;
 use Singo\Application as Singo;
+use Singo\Contracts\Module\CommandHandlerProviderInterface;
 use Singo\Contracts\Module\ModuleInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -16,15 +19,18 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * Class Module
  * @package App\Modules\User
  */
-class Module implements ModuleInterface
+class Module implements
+    ModuleInterface,
+    ServiceProviderInterface,
+    CommandHandlerProviderInterface,
+    EventListenerProviderInterface
 {
-
     /**
      * {@inheritdoc}
      */
-    public function boot(Application $app)
+    public static function getName()
     {
-
+        return "User Module";
     }
 
     /**
@@ -58,7 +64,7 @@ class Module implements ModuleInterface
     /**
      * {@inheritdoc}
      */
-    public function command(Singo $application)
+    public function command(Application $application)
     {
         /**
          * register login command and handler

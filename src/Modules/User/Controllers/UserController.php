@@ -17,7 +17,7 @@ use DDesrosiers\SilexAnnotations\Annotations as SLX;
  *      resourcePath="/user",
  *      basePath="http://singo-app.dev"
  * )
- * @SLX\Controller(prefix="/")
+ * @SLX\Controller(prefix="/user/")
  * Class UserController
  * @package App\Modules\User\Controllers
  */

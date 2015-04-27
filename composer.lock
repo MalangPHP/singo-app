@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/danadesrosiers/silex-annotation-provider.git",
-                "reference": "4e21b292b0c084d8a044bf1d53943f70c20a534f"
+                "reference": "a70ed0c00ec93f48f4a5284aa66f58d9c3415e2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danadesrosiers/silex-annotation-provider/zipball/4e21b292b0c084d8a044bf1d53943f70c20a534f",
-                "reference": "4e21b292b0c084d8a044bf1d53943f70c20a534f",
+                "url": "https://api.github.com/repos/danadesrosiers/silex-annotation-provider/zipball/a70ed0c00ec93f48f4a5284aa66f58d9c3415e2d",
+                "reference": "a70ed0c00ec93f48f4a5284aa66f58d9c3415e2d",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
                 "service",
                 "silex"
             ],
-            "time": "2015-04-20 03:22:53"
+            "time": "2015-04-20 04:22:14"
         },
         {
             "name": "doctrine/annotations",
@@ -549,12 +549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MalangPHP/singo.git",
-                "reference": "eea9866c04a518dcc924c4595f9d58d39a61a801"
+                "reference": "988c6f4362d3227a4a48867735c6d83fe2a292d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MalangPHP/singo/zipball/eea9866c04a518dcc924c4595f9d58d39a61a801",
-                "reference": "eea9866c04a518dcc924c4595f9d58d39a61a801",
+                "url": "https://api.github.com/repos/MalangPHP/singo/zipball/988c6f4362d3227a4a48867735c6d83fe2a292d0",
+                "reference": "988c6f4362d3227a4a48867735c6d83fe2a292d0",
                 "shasum": ""
             },
             "require": {
@@ -567,6 +567,7 @@
                 "silex/silex": "~2.0@dev",
                 "stack/builder": "~1.0",
                 "swiftmailer/swiftmailer": "~5.3",
+                "symfony/console": "~2.6",
                 "symfony/security": "~2.6",
                 "symfony/validator": "~2.6"
             },
@@ -596,7 +597,7 @@
                 }
             ],
             "description": "Silex-based feature rich rest application skeleton",
-            "time": "2015-04-22 08:40:12"
+            "time": "2015-04-27 04:34:04"
         },
         {
             "name": "monolog/monolog",
@@ -942,6 +943,64 @@
                 "mailer"
             ],
             "time": "2015-03-14 06:06:39"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/phpunit-bridge": "~2.7",
+                "symfony/process": "~2.1"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-30 15:54:10"
         },
         {
             "name": "symfony/debug",
@@ -1994,64 +2053,6 @@
                 "orm"
             ],
             "time": "2015-04-02 20:40:18"
-        },
-        {
-            "name": "symfony/console",
-            "version": "v2.6.6",
-            "target-dir": "Symfony/Component/Console",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Console.git",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1",
-                "symfony/phpunit-bridge": "~2.7",
-                "symfony/process": "~2.1"
-            },
-            "suggest": {
-                "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": "",
-                "symfony/process": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Console\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Symfony Console Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
         },
         {
             "name": "symfony/yaml",
