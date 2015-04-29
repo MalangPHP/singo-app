@@ -4,7 +4,6 @@ namespace App\Modules\User\Controllers;
 
 use App\Modules\User\Commands\LoginCommand;
 use League\Tactician\CommandBus;
-use Singo\Contracts\Controller\ControllerAbstract;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
