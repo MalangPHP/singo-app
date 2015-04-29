@@ -44,6 +44,8 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $response = $this->app->handle($req);
+
+        $this->assertContains("data", $response->getContent());
     }
 }
 

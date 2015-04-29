@@ -3,6 +3,7 @@
 namespace App\Modules\User\Controllers;
 
 use App\Modules\User\Commands\LoginCommand;
+use League\Tactician\CommandBus;
 use Singo\Contracts\Controller\ControllerAbstract;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,8 +22,19 @@ use DDesrosiers\SilexAnnotations\Annotations as SLX;
  * Class UserController
  * @package App\Modules\User\Controllers
  */
-class UserController extends ControllerAbstract
+class UserController
 {
+    /**
+     * @var CommandBus
+     */
+    protected $bus;
+
+    /**
+     * @param CommandBus $bus
+     */
+    public function __construct(CommandBus $bus) {
+        $this->bus = $bus;
+    }
     /**
      * @SWG\Api(
      *      path="/user/login",

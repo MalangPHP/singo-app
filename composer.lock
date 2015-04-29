@@ -549,12 +549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MalangPHP/singo.git",
-                "reference": "988c6f4362d3227a4a48867735c6d83fe2a292d0"
+                "reference": "3c26edc4a529d8022d1e3fd8ffeb638e2b146e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MalangPHP/singo/zipball/988c6f4362d3227a4a48867735c6d83fe2a292d0",
-                "reference": "988c6f4362d3227a4a48867735c6d83fe2a292d0",
+                "url": "https://api.github.com/repos/MalangPHP/singo/zipball/3c26edc4a529d8022d1e3fd8ffeb638e2b146e59",
+                "reference": "3c26edc4a529d8022d1e3fd8ffeb638e2b146e59",
                 "shasum": ""
             },
             "require": {
@@ -597,7 +597,7 @@
                 }
             ],
             "description": "Silex-based feature rich rest application skeleton",
-            "time": "2015-04-27 04:34:04"
+            "time": "2015-04-28 06:07:21"
         },
         {
             "name": "monolog/monolog",

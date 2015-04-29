@@ -28,20 +28,16 @@ class Module implements
     /**
      * {@inheritdoc}
      */
-    public static function getName()
-    {
-        return "User Module";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function register(Container $container)
     {
         /**
          * register user service provider
          */
         $container->register(new UserServiceProvider());
+
+        $container[LoginCommand::class] = function () {
+            return new LoginCommand();
+        };
     }
 
     /**
@@ -64,7 +60,7 @@ class Module implements
     /**
      * {@inheritdoc}
      */
-    public function command(Application $application)
+    public function command(Singo $application)
     {
         /**
          * register login command and handler
