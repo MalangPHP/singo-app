@@ -1,5 +1,0 @@
-<?php
-
-/**
- * Register event listener
- */

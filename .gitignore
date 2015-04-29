@@ -1,5 +1,5 @@
 vendor
 .idea
-composer.lock
 src/Storage/Logs/*.log
 swagger.phar
+server.log

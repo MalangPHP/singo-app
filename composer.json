@@ -3,9 +3,14 @@
     "description": "Singo Base Application",
     "require": {
         "silex/silex": "~2.0@dev",
-        "malangphp/singo": "~1.1.1",
+        "ddesrosiers/silex-annotation-provider": "dev-master",
+        "malangphp/singo": "dev-master",
         "zircote/swagger-php": "*"
         },
+    "require-dev": {
+        "symfony/yaml": "~2.6",
+        "dflydev/doctrine-orm-service-provider": "~2.0"
+    },
     "license": "MIT",
     "authors": [
         {

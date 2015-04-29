@@ -1,7 +1,6 @@
 <?php
 
-
-namespace App\Entities;
+namespace App\Modules\User\Entities;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -103,4 +102,3 @@ class User implements UserInterface
 
     }
 }
-

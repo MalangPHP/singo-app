@@ -1,9 +1,8 @@
 <?php
 
+namespace App\Modules\User\Providers;
 
-namespace App\Providers;
-
-use App\Entities\User;
+use App\Modules\User\Entities\User;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -61,4 +60,3 @@ class UserServiceProvider implements UserProviderInterface, ServiceProviderInter
         };
     }
 }
-
