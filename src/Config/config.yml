@@ -29,7 +29,7 @@ database:
     mappings:
       type: annotation
       namespace: App\Entities
-      path: /App/Entities
+      path: ./src/App/Entities
 
 # JWT configuration
 jwt:
