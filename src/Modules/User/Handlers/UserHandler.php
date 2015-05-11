@@ -4,6 +4,7 @@ namespace App\Modules\User\Handlers;
 
 use App\Modules\User\Commands\LoginCommand;
 use App\Modules\User\EventSourcing\Events\AfterLoginEvent;
+use App\Modules\User\Exceptions\InvalidUsernamePasswordException;
 use Silex\Component\Security\Core\Encoder\JWTEncoder;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -48,6 +49,6 @@ class UserHandler
             return $this->encoder->encode(["name" => $command->getUsername()]);
         }
 
-        throw new \InvalidArgumentException("invalid username or password");
+        throw new InvalidUsernamePasswordException("invalid username or password");
     }
 }

@@ -3,12 +3,11 @@
 namespace App\Modules\User\Controllers;
 
 use App\Modules\User\Commands\LoginCommand;
+use DDesrosiers\SilexAnnotations\Annotations as SLX;
 use League\Tactician\CommandBus;
+use Swagger\Annotations as SWG;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Swagger\Annotations as SWG;
-use DDesrosiers\SilexAnnotations\Annotations as SLX;
 
 /**
  * @SWG\Resource(
@@ -31,9 +30,11 @@ class UserController
     /**
      * @param CommandBus $bus
      */
-    public function __construct(CommandBus $bus) {
+    public function __construct(CommandBus $bus)
+    {
         $this->bus = $bus;
     }
+
     /**
      * @SWG\Api(
      *      path="/user/login",
@@ -82,35 +83,13 @@ class UserController
         $command->setUsername($request->get("username"));
         $command->setPassword($request->get("password"));
 
-        try {
-            $token = $this->bus->handle($command);
+        $token = $this->bus->handle($command);
 
-            $object = new \ArrayObject();
+        $object = new \ArrayObject();
 
-            $object->offsetSet("data", ["token" => $token]);
+        $object->offsetSet("data", ["token" => $token]);
 
-            $response = new JsonResponse($object);
-        } catch (\InvalidArgumentException $e) {
-            $response =  new JsonResponse(
-                [
-                    "error" => [
-                        "message" => $e->getMessage()
-                    ]
-                ],
-                Response::HTTP_BAD_REQUEST
-            );
-        } catch (\Exception $e)
-        {
-            $response = new JsonResponse(
-                [
-                    "error" => [
-                        "message" => $e->getMessage()
-                    ]
-                ],
-                Response::HTTP_INTERNAL_SERVER_ERROR
-            );
-        }
-
+        $response = new JsonResponse($object);
         return $response;
     }
 
