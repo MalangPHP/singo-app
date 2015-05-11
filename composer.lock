@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3911a5977c20e40a5e3a4e815ac8c5b9",
+    "hash": "1fcea96a10706e9d96268cfc04d9c109",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1168,6 +1168,56 @@
             "time": "2015-05-02 15:18:45"
         },
         {
+            "name": "symfony/finder",
+            "version": "v2.6.7",
+            "target-dir": "Symfony/Component/Finder",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "704c64c8b12c8882640d5c0330a8414b1e06dc99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/704c64c8b12c8882640d5c0330a8414b1e06dc99",
+                "reference": "704c64c8b12c8882640d5c0330a8414b1e06dc99",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
+        },
+        {
             "name": "symfony/http-foundation",
             "version": "v2.6.7",
             "target-dir": "Symfony/Component/HttpFoundation",
@@ -1724,34 +1774,37 @@
         },
         {
             "name": "zircote/swagger-php",
-            "version": "0.9.6",
+            "version": "2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "4ba5d73eeb068dc590162ea367ef94853011bb36"
+                "reference": "1064c5703feea83aa7f08d37abe93644780fc05f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/4ba5d73eeb068dc590162ea367ef94853011bb36",
-                "reference": "4ba5d73eeb068dc590162ea367ef94853011bb36",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/1064c5703feea83aa7f08d37abe93644780fc05f",
+                "reference": "1064c5703feea83aa7f08d37abe93644780fc05f",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "*",
-                "php": ">=5.3.3"
+                "php": ">=5.4.0",
+                "symfony/finder": "~2.6"
             },
             "require-dev": {
-                "symfony/finder": "*",
-                "symfony/process": "*"
+                "zendframework/zend-form": "~2.3"
             },
             "bin": [
                 "bin/swagger"
             ],
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Swagger": "library"
-                }
+                "psr-4": {
+                    "Swagger\\": "src"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1769,14 +1822,15 @@
                     "homepage": "http://bfanger.nl"
                 }
             ],
-            "description": "Swagger-PHP library implementing the swagger.wordnik.com specification to describe web services, operations/actions and models enabling a uniform means of producing, consuming, and visualizing RESTful web services.",
+            "description": "Swagger-PHP - Generate interactive documentation for your RESTful API using phpdoc annotations",
             "homepage": "https://github.com/zircote/swagger-php/",
             "keywords": [
                 "api",
                 "json",
+                "rest",
                 "service discovery"
             ],
-            "time": "2014-10-11 11:14:09"
+            "time": "2015-05-08 16:55:29"
         }
     ],
     "packages-dev": [
@@ -2301,7 +2355,8 @@
     "stability-flags": {
         "silex/silex": 20,
         "ddesrosiers/silex-annotation-provider": 20,
-        "malangphp/singo": 20
+        "malangphp/singo": 20,
+        "zircote/swagger-php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
