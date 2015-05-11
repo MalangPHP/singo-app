@@ -4,7 +4,24 @@ common:
     name: singo
     dir: /Storage/Logs
     level: DEBUG
-  debug: 1
+  debug: 0
+
+api:
+  content_negotiator:
+    language:
+      - '*'
+    format:
+      - '*/*'
+  cors:
+    allowedHeaders:
+      - '*'
+    allowedMethod:
+      - '*'
+    allowedOrigins:
+      - '*'
+    exposedHeaders: 0
+    maxAge: 0
+    supportsCredentials: 0
 
 # mailer configuration
 mailer:
